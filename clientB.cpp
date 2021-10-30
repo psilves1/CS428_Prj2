@@ -18,8 +18,11 @@
 //Client side
 int main(int argc, char *argv[])
 {
- 
-    char *serverIp = "127.0.0.1";
+    if(argc != 2){
+        std::cerr << "./usage ipAddress" << std::endl;
+        return 0;
+    }
+    char *serverIp = argv[1];
     int port = 12345; //atoi(argv[2]);
     //create a message buffer
     char msg[1500];
